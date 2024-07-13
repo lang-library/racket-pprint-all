@@ -6,8 +6,6 @@ cwd=`pwd`
 ts=`date "+%Y.%m%d.%H%M.%S"`
 version="${ts}"
 
-#raco setup --fix-pkg-deps easyscript
-
 sed -i -e "s/<Version>.*<\/Version>/<Version>${version}<\/Version>/g" version.xml
 
 tag="PPrintAll-v$version"
