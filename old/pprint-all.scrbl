@@ -31,13 +31,11 @@ This basically provides @racket[pp], @racket[echo], and @racket[dump].
 
 @section{Reference}
 
-@defform[(pp x [port (current-output-port)]
-               #:unquote-string? [unquote-string? #f])]{
+@defform[(pp x [port (current-output-port)] #:unquote-string? [unquote-string? #f])]{
 Pretty-print x to the port.
 }
 
-@defform[(pp->string x
-                     #:unquote-string? [unquote-string? #f])]{
+@defform[(pp->string x  #:unquote-string? [unquote-string? #f])]{
 Pretty-print to a string.
 }
 
@@ -45,12 +43,10 @@ Pretty-print to a string.
 @racket[print] to a string.
 }
 
-@defform[(echo x [title ""] [port (current-output-port)]
-                 #:unquote-string? [unquote-string? #t])]{
+@defform[(echo x [title ""] [port (current-output-port)]  #:unquote-string? [unquote-string? #t])]{
 Pretty-print x to the port with an optional title.
 }
 
-@defform[(dump x [port (current-output-port)]
-                 #:unquote-string? [unquote-string? #t])]{
+@defform[(dump x [port (current-output-port)]  #:unquote-string? [unquote-string? #t])]{
 Pretty-print x to the port with an auto-generated title.
 }
