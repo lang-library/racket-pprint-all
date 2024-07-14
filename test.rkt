@@ -1,5 +1,6 @@
 #lang racket
 (require "./main.rkt")
+(require "./remove-last-newline.rkt")
 
 (define x (+ 11 22))
 (echo x)
@@ -11,3 +12,11 @@
 (echo ''123)
 (echo 'abc)
 (echo ''abc)
+(pp (remove-last-newline "abc\r\n"))
+(pp (remove-last-newline "abc\r"))
+(pp (remove-last-newline "abc\n"))
+(echo (pp->string (list x 777)))
+(dump (pp->string (list x 777)))
+(echo "abc\r\n")
+(echo "abc\r")
+(echo "abc\n")

@@ -3,6 +3,7 @@
 (require pprint)
 (require "./ppobj.rkt")
 (require "./ppdoc.rkt")
+(require "./remove-last-newline.rkt")
 
 (define (pp x [port (current-output-port)] #:unquote-string? [unquote-string? #f])
   (if (doc? x)
@@ -15,7 +16,7 @@
   (let* ([op (open-output-string)]
          [_ (pp x op #:unquote-string? unquote-string?)]
          [s (get-output-string op)])
-    (string-trim s)
+    (remove-last-newline s)
     )
   )
 
@@ -23,7 +24,7 @@
   (let* ([op (open-output-string)]
          [_ (print x op)]
          [s (get-output-string op)])
-    (string-trim s)
+    (remove-last-newline s)
     )
   )
 
@@ -42,4 +43,4 @@
   `(echo ,x ,(format "~s" x) ,@rest)
   )
 
-(provide pp pp->string print->string echo dump)
+(provide pp pp->string print->string echo dump remove-last-newline)
