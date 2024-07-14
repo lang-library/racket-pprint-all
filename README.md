@@ -1,10 +1,11 @@
 # Pretty-Printing Library for Racket
 
-by JavaCommons Technologies
+JavaCommons Technologies
 <[javacommons@gmail.com](mailto:javacommons@gmail.com)>
 
- (require pprint-all)
- package: [pprint-all](https://pkgs.racket-lang.org/package/pprint-all)
+```racket
+ (require pprint-all) package: [pprint-all](https://pkgs.racket-lang.org/package/pprint-all)
+```
 
 This basically provides `pp`, `echo`, and `dump`.
 
@@ -34,13 +35,15 @@ This basically provides `pp`, `echo`, and `dump`.
 ## 2. Reference
 
 ```racket
-(pp x [port (current-output-port)] #:unquote-string? [unquote-string? #f])
+(pp x [port (current-output-port)]           
+      #:unquote-string? [unquote-string? #f])
 ```
 
 Pretty-print x to the port.
 
 ```racket
-(pp->string x  #:unquote-string? [unquote-string? #f])
+(pp->string x                                      
+            #:unquote-string? [unquote-string? #f])
 ```
 
 Pretty-print to a string.
@@ -52,13 +55,15 @@ Pretty-print to a string.
 `print` to a string.
 
 ```racket
-(echo x [title ""] [port (current-output-port)]  #:unquote-string? [unquote-string? #t])
+(echo x [title ""] [port (current-output-port)]
+        #:unquote-string? [unquote-string? #t])
 ```
 
 Pretty-print x to the port with an optional title.
 
 ```racket
-(dump x [port (current-output-port)]  #:unquote-string? [unquote-string? #t])
+(dump x [port (current-output-port)]           
+        #:unquote-string? [unquote-string? #t])
 ```
 
 Pretty-print x to the port with an auto-generated title.
