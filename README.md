@@ -45,13 +45,13 @@ Pretty-print x to the port.
             #:unquote-string? [unquote-string? #f])
 ```
 
-Pretty-print to a string.
+Pretty-print x to a string.
 
 ```racket
 (print->string x)
 ```
 
-`print` to a string.
+`print` x to a string.
 
 ```racket
 (echo x [title ""] [port (current-output-port)]

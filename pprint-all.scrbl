@@ -38,11 +38,11 @@ Pretty-print x to the port.
 
 @defform[(pp->string x
                      #:unquote-string? [unquote-string? #f])]{
-Pretty-print to a string.
+Pretty-print x to a string.
 }
 
 @defform[(print->string x)]{
-@racket[print] to a string.
+@racket[print] x to a string.
 }
 
 @defform[(echo x [title ""] [port (current-output-port)]
