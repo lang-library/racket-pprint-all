@@ -28,8 +28,8 @@
     )
   )
 
-(define (echo x [title ""] [port (current-output-port)])
-  (let* ([msg (pp->string x #:unquote-string? #t)])
+(define (echo x [title ""] [port (current-output-port)]  #:unquote-string? [unquote-string? #t])
+  (let* ([msg (pp->string x #:unquote-string? unquote-string?)])
     (cond
       ((not (equal? title ""))
        (set! msg (format "~a ==> ~a" title msg))
