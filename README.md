@@ -1,11 +1,10 @@
 # Pretty-Printing Library for Racket
 
-JavaCommons Technologies
+by JavaCommons Technologies
 <[javacommons@gmail.com](mailto:javacommons@gmail.com)>
 
-```racket
- (require pprint-all) package: [pprint-all](https://pkgs.racket-lang.org/package/pprint-all)
-```
+ (require pprint-all)
+ package: [pprint-all](https://pkgs.racket-lang.org/package/pprint-all)
 
 This basically provides `pp`, `echo`, and `dump`.
 
