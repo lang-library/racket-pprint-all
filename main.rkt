@@ -24,6 +24,11 @@
   (let* ([op (open-output-string)]
          [_ (print x op)]
          [s (get-output-string op)])
+    (cond
+      ((string-prefix? s "'")
+       (set! s (substring s 1))
+       )
+      )
     (remove-last-newline s)
     )
   )

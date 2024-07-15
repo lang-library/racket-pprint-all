@@ -20,6 +20,7 @@
   (let* ([msg (pretty-print->string x #:unquote-string? unquote-string?)])
     (cond
       ((and
+        (not (string? x))
         (string-prefix? msg "'")
         )
        (set! msg (substring msg 1))
