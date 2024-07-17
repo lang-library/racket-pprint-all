@@ -5,10 +5,12 @@
 (require "./ppdoc.rkt")
 (require "./remove-last-newline.rkt")
 
+#;(define printing-semaphore (make-semaphore))
+
 (define (pp x [port (current-output-port)] #:unquote-string? [unquote-string? #f])
   (if (doc? x)
-      (ppdoc x port)
-      (ppobj x port #:unquote-string? unquote-string?)
+      (ppdoc x (sync port))
+      (ppobj x (sync port) #:unquote-string? unquote-string?)
       )
   )
 
@@ -40,7 +42,7 @@
        (set! msg (format "~a ==> ~a" title msg))
        )
       )
-    (displayln msg port)
+    (displayln msg (sync port))
     )
   )
 
