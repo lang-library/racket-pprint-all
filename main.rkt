@@ -22,7 +22,7 @@
     )
   )
 
-(define (print->string x)
+(define (output->string x)
   (let* ([op (open-output-string)]
          [_ (print x op)]
          [s (get-output-string op)])
@@ -33,6 +33,10 @@
       )
     (remove-last-newline s)
     )
+  )
+
+(define (output datum [out (current-output-port)])
+  (displayln (output->string datum) out)
   )
 
 (define (echo x [title ""] [port (current-output-port)]  #:unquote-string? [unquote-string? #t])
@@ -50,4 +54,4 @@
   `(echo ,x ,(format "~s" x) ,@rest)
   )
 
-(provide pp pp->string print->string echo dump remove-last-newline)
+(provide pp pp->string output output->string echo dump remove-last-newline)

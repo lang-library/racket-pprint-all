@@ -10,6 +10,7 @@
 (echo "hello \nworld" "msg") ;; echo unquotes string
 (echo (pp->string (list x 777)))
 (dump (pp->string (list x 777)))
-(dump (print->string (list x 777)))
+(dump (output->string (list x 777)))
 (echo "abc\r\n" "quote" #:unquote-string? #f)
 (dump "abc\r\n" #:unquote-string? #f)
+(output (list x 777))
